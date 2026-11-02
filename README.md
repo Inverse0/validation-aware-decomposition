@@ -85,7 +85,7 @@ python experiment.py diagnostics --run out/rq1/runs/gpt-5.6-sol_a1/opt \
 
 ## Trying DecoVal on your own queries
 
-DecoVal reads a schema as JSON: each table with its columns, their types and nullability, and its primary and foreign keys, as in [`benchmarks/toy/schema.json`](benchmarks/toy/schema.json).
+DecoVal reads a schema as JSON: each table with its columns, their types and nullability, and its primary, unique and foreign keys, as in [`benchmarks/toy/schema.json`](benchmarks/toy/schema.json) and the schemas in [`benchmarks/validation/schemas/`](benchmarks/validation/schemas).
 
 To see how DecoVal decomposes a query (no LLM calls):
 
