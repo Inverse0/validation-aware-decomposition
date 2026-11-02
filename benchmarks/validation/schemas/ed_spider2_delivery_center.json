@@ -1,0 +1,362 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "channel_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "channel_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "channel_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "channels",
+   "primary_key": [
+    "channel_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "delivery_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "delivery_order_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "delivery_distance_meters",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "delivery_status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "deliveries",
+   "primary_key": [
+    "delivery_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_modal",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "driver_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "drivers",
+   "primary_key": [
+    "driver_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "hub_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "hub_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hub_city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hub_state",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hub_latitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "hub_longitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hubs",
+   "primary_key": [
+    "hub_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "order_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "store_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "channel_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "payment_order_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "delivery_order_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_amount",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_delivery_fee",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_delivery_cost",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_created_hour",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_created_minute",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_created_day",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_created_month",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_created_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "order_moment_created",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_accepted",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_ready",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_collected",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_in_expedition",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_delivering",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_delivered",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_moment_finished",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_metric_collected_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_paused_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_production_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_walking_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_expediton_speed_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_transit_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "order_metric_cycle_time",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "orders",
+   "primary_key": [
+    "order_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "payment_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "payment_order_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "payment_amount",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "payment_fee",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "payment_method",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "payment_status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "payments",
+   "primary_key": [
+    "payment_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "store_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "hub_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "store_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "store_segment",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "store_plan_price",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "store_latitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "store_longitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "stores",
+   "primary_key": [
+    "store_id"
+   ]
+  }
+ ]
+}

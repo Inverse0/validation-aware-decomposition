@@ -1,0 +1,4 @@
+READER {k}: block {reader}, whose own task is:
+{task}
+Its SQL (it reads the relation as {relation}):
+{sql}

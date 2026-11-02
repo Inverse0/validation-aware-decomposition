@@ -1,0 +1,235 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "aircraft_code",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "model",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "range",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "aircrafts_data",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "airport_code",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "airport_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "city",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "coordinates",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "timezone",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "airports_data",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "ticket_no",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "flight_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "boarding_no",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "seat_no",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "boarding_passes",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "book_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "book_date",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "total_amount",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bookings",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "flight_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "flight_no",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "scheduled_departure",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "scheduled_arrival",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "departure_airport",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "arrival_airport",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "aircraft_code",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "actual_departure",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "actual_arrival",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "flights",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "aircraft_code",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "seat_no",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "fare_conditions",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "seats",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "ticket_no",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "flight_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fare_conditions",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "amount",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ticket_flights",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "ticket_no",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "book_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "passenger_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "tickets",
+   "primary_key": []
+  }
+ ]
+}

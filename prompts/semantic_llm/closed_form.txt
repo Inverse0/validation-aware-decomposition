@@ -1,0 +1,1 @@
+ A relation that lies inside a correlated subquery depends on a row of the query around it; it is written in closed form, as the subquery inside `SELECT 1 FROM <the tables it refers to> WHERE EXISTS (...)`: judge that subquery, for one row of those tables.

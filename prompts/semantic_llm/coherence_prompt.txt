@@ -1,0 +1,19 @@
+Below are intermediate relations computed inside a SQL query, each written as a stand-alone SQL statement over the base tables.{closed_form} You are not told what the query is for.
+
+For each relation, judge whether it makes sense on its own: whether a person who knows the schema could understand it without seeing the rest of the query.
+
+First write "name": a short noun phrase (at most 8 words) for what the relation is, and "row": what one row of it is (for example "one row per customer"). Then rate "coherence" from 0 to 3:
+3 = a natural unit with a clear name and a clear row (for example "customers in Europe"; "number of orders per customer").
+2 = makes sense, but the name needs a qualification, or some columns are there only for a later step.
+1 = describable only as an operation ("rows of A joined with B"): a staging step whose purpose would show only later, or an unclear row (one row per what?).
+0 = does not make sense on its own: for example half of a condition, or columns whose meaning depends on something not shown.
+
+Judge the meaning only: not whether the SQL is correct, and not its length or complexity. A small relation can get 3. Do not guess what the query is for.
+
+SCHEMA
+{schema_text}
+
+RELATIONS
+{relations}
+
+Answer with ONE JSON object and nothing else: {{"C1": {{"name": "...", "row": "...", "coherence": n}}, "C2": {{...}}, ...}} with exactly the labels of the relations above as keys, every one of them.

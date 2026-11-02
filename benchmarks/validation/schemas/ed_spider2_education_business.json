@@ -1,0 +1,620 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "customer_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customer",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "platform",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "channel",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "market",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sub_zone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "region",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_dim_customer",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "division",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "variant",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_dim_product",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fiscal_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gross_price",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_fact_gross_price",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "cost_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "manufacturing_cost",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_fact_manufacturing_cost",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "customer_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fiscal_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "pre_invoice_discount_pct",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_fact_pre_invoice_deductions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sold_quantity",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fiscal_year",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "hardware_fact_sales_monthly",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "companyname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "jobtitle",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "salariesreported",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "location",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "salary",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "salarydataset",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "staffmember",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "eventdate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "eventtime",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "eventtype",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "staffhours",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "courseno",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "crsdesc",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "crsunits",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "university_course",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "offerno",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stdno",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "enrgrade",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "university_enrollment",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "facno",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "facfirstname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "faclastname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "faccity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "facstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "facdept",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "facrank",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "facsalary",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "facsupervisor",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "fachiredate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "faczipcode",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "university_faculty",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "offerno",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "courseno",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "offterm",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "offyear",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "offlocation",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "offtime",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "facno",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "offdays",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "university_offering",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stdno",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stdfirstname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdlastname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdcity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdzip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdmajor",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stdgpa",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "university_student",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "website",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lat",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "long",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "primary_poc",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sales_rep_id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "web_accounts",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "account_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "occurred_at",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "channel",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "web_events",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "account_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "occurred_at",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_qty",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gloss_qty",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "poster_qty",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "total",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_amt_usd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "gloss_amt_usd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "poster_amt_usd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "total_amt_usd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "web_orders",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "web_region",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "region_id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "web_sales_reps",
+   "primary_key": []
+  }
+ ]
+}

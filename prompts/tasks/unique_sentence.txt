@@ -1,0 +1,1 @@
+UNIQUE(...) after the columns = a unique key: two rows never share all of its values unless one of them is NULL there

@@ -1,0 +1,431 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "customer_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_unique_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_zip_code_prefix",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customer_city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_state",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customers",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "geolocation_zip_code_prefix",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "geolocation_lat",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "geolocation_lng",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "geolocation_city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "geolocation_state",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "geolocation",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "mql_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "seller_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sdr_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sr_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "won_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "business_segment",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lead_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lead_behaviour_profile",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "has_company",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "has_gtin",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "average_stock",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "business_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "declared_product_catalog_size",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "declared_monthly_revenue",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "leads_closed",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "mql_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_contact_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "landing_page_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "origin",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "leads_qualified",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "order_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_item_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "seller_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shipping_limit_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "price",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "freight_value",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "order_items",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "order_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "payment_sequential",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "payment_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "payment_installments",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "payment_value",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "order_payments",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "review_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_score",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "review_comment_title",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_comment_message",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_creation_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "review_answer_timestamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "order_reviews",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "order_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_purchase_timestamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_approved_at",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_delivered_carrier_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_delivered_customer_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "order_estimated_delivery_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "orders",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_category_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_category_name_english",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "product_category_name_translation",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_category_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_name_lenght",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_description_lenght",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_photos_qty",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_weight_g",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_length_cm",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_height_cm",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "product_width_cm",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "products",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "seller_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "seller_zip_code_prefix",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "seller_city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "seller_state",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "sellers",
+   "primary_key": []
+  }
+ ]
+}

@@ -1,0 +1,97 @@
+{
+  "tables": [
+    {
+      "name": "customers",
+      "columns": [
+        {
+          "name": "c_id",
+          "type": "INT",
+          "nullable": false
+        },
+        {
+          "name": "c_name",
+          "type": "VARCHAR",
+          "nullable": true
+        },
+        {
+          "name": "c_region",
+          "type": "VARCHAR",
+          "nullable": true
+        }
+      ],
+      "primary_key": [
+        "c_id"
+      ],
+      "foreign_keys": []
+    },
+    {
+      "name": "orders",
+      "columns": [
+        {
+          "name": "o_id",
+          "type": "INT",
+          "nullable": false
+        },
+        {
+          "name": "o_cust",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "o_total",
+          "type": "DECIMAL",
+          "nullable": true
+        }
+      ],
+      "primary_key": [
+        "o_id"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "o_cust"
+          ],
+          "ref_table": "customers",
+          "ref_columns": [
+            "c_id"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lineitems",
+      "columns": [
+        {
+          "name": "l_order",
+          "type": "INT",
+          "nullable": false
+        },
+        {
+          "name": "l_no",
+          "type": "INT",
+          "nullable": false
+        },
+        {
+          "name": "l_qty",
+          "type": "INT",
+          "nullable": true
+        }
+      ],
+      "primary_key": [
+        "l_order",
+        "l_no"
+      ],
+      "foreign_keys": [
+        {
+          "columns": [
+            "l_order"
+          ],
+          "ref_table": "orders",
+          "ref_columns": [
+            "o_id"
+          ]
+        }
+      ]
+    }
+  ]
+}

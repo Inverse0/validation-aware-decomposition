@@ -1,0 +1,1387 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "circuit_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "circuit_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "location",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lat",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "lng",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "alt",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "url",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "circuits",
+   "primary_key": [
+    "circuit_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "circuit_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "circuit_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "location",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lat",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "lng",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "alt",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_race_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "number_of_races",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "circuits_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_results_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "constructor_results",
+   "primary_key": [
+    "constructor_results_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_standings_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_text",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "wins",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "constructor_standings",
+   "primary_key": [
+    "constructor_standings_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nationality",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "constructors",
+   "primary_key": [
+    "constructor_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nationality",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "short_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "constructors_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "driver_standings_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_text",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "wins",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "driver_standings",
+   "primary_key": [
+    "driver_standings_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "driver_standings_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_text",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "wins",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "driver_standings_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "forename",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "surname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dob",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nationality",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "drivers",
+   "primary_key": [
+    "driver_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "forename",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "surname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "full_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "dob",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nationality",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "drivers_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "drive_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "first_round",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_round",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "is_first_drive_of_season",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "is_final_drive_of_season",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "drives",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lap_positions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "avg_milliseconds",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "avg_seconds",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "stdev_milliseconds",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "stdev_seconds",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lap_time_stats",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lap_times",
+   "primary_key": [
+    "race_id",
+    "driver_id",
+    "lap"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "seconds",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "running_milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lap_times_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "start_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "end_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "primary_hex_code",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "liveries",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stop",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "time",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "duration",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "pit_stops",
+   "primary_key": [
+    "race_id",
+    "driver_id",
+    "stop"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "qualify_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "number",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "q1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "q2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "q3",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "qualifying",
+   "primary_key": [
+    "qualify_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "year",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "round",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "circuit_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "date",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp1_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp1_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp2_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp2_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp3_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp3_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "quali_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "quali_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sprint_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sprint_time",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "races",
+   "primary_key": [
+    "race_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "round",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "circuit_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp1_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp1_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp2_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp2_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp3_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fp3_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "quali_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "quali_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sprint_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sprint_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "is_pit_data_available",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "short_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "has_sprint",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max_points",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "races_ext",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "result_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "grid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_text",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "position_order",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "laps",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fastest_lap",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rank",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fastest_lap_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fastest_lap_speed",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "status_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "results",
+   "primary_key": [
+    "result_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "race_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lap",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_order",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "retirement_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "retirements",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "year",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "url",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "seasons",
+   "primary_key": [
+    "year"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "constructor_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "short_name",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "short_constructor_names",
+   "primary_key": [
+    "constructor_ref"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "full_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "short_name",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "short_grand_prix_names",
+   "primary_key": [
+    "full_name"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "result_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "race_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "grid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position_text",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "position_order",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "points",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "laps",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fastest_lap",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "fastest_lap_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fastest_lap_speed",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "sprint_results",
+   "primary_key": [
+    "result_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "status_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "status",
+   "primary_key": [
+    "status_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "year",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "driver_ref",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "team_driver_rank",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "tdr_overrides",
+   "primary_key": [
+    "year",
+    "constructor_ref",
+    "driver_ref"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "constructor_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "driver_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver_ref",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "team_driver_rank",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "team_driver_ranks",
+   "primary_key": []
+  }
+ ]
+}

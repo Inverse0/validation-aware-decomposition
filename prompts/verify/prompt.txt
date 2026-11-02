@@ -1,0 +1,17 @@
+You are reviewing a SQL query written to answer a question. Decide whether the query, exactly as written, answers the question correctly against the schema below. Judge the SQL text itself: its joins, filters, grouping, output columns and the semantics of its operators. Do not rewrite it and do not run anything. Minor formatting differences, column aliases and row order do not matter unless the question asks for an order.
+
+QUESTION
+{question}
+{evidence}
+{schema_legend}
+{schema_text}
+{inputs_text}
+SQL
+{sql}
+
+Answer with exactly two lines and nothing else:
+VERDICT: yes
+REASON: <one sentence>
+or
+VERDICT: no
+REASON: <one sentence>

@@ -1,0 +1,577 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "access_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "products",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "amount",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "action_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "action_log_with_ip",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "products",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_agent",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "action_log_with_noise",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "option",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "path",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "search_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "activity_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "email",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "app1_mst_users",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "phone",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "app2_mst_users",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "products",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "dup_action_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "form",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "field",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "error_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "value",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "form_error_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "path",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "form_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "products",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "amount",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "invalid_action_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mst_categories",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "price",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "updated_at",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mst_products_20161201",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "price",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "updated_at",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mst_products_20170101",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sex",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "birth_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "register_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "register_device",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "withdraw_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mst_users",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "card_number",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mst_users_with_card_number",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "category_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sales",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "product_sales",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "purchase_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "amount",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "purchase_log",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "stamp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "session",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "read_log",
+   "primary_key": []
+  }
+ ]
+}

@@ -1,0 +1,632 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "case_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "db_year",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "case_ids",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "case_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "jurisdiction",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "officer_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "reporting_district",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_shift",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "population",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "county_city_location",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "county_location",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "special_condition",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "beat_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_beat_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "city_division_lapd",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_beat_class",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "beat_number",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "primary_road",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "secondary_road",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "distance",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "direction",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "intersection",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "weather_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "weather_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "state_highway_indicator",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "caltrans_county",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "caltrans_district",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "state_route",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "route_suffix",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "postmile_prefix",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "postmile",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "location_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ramp_intersection",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "side_of_highway",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "tow_away",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "collision_severity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "killed_victims",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "injured_victims",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "party_count",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "primary_collision_factor",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pcf_violation_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pcf_violation_category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pcf_violation",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "pcf_violation_subsection",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hit_and_run",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "type_of_collision",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "motor_vehicle_involved_with",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pedestrian_action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "road_surface",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "road_condition_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "road_condition_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lighting",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "control_device",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_road_type",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "pedestrian_collision",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bicycle_collision",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "motorcycle_collision",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "truck_collision",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "not_private_property",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "alcohol_involved",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "statewide_vehicle_type_at_fault",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_vehicle_type_at_fault",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "severe_injury_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "other_visible_injury_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "complaint_of_pain_injury_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "pedestrian_killed_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "pedestrian_injured_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bicyclist_killed_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bicyclist_injured_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "motorcyclist_killed_count",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "motorcyclist_injured_count",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "primary_ramp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "secondary_ramp",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "latitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "longitude",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "collision_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "collision_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "process_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "collisions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "case_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "party_number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "party_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "at_fault",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "party_sex",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_age",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "party_sobriety",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_drug_physical",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "direction_of_travel",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_safety_equipment_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_safety_equipment_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "financial_responsibility",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hazardous_materials",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "cellphone_in_use",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "cellphone_use_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "school_bus_related",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "oaf_violation_code",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "oaf_violation_category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "oaf_violation_section",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "oaf_violation_suffix",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "other_associate_factor_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "other_associate_factor_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_number_killed",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "party_number_injured",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "movement_preceding_collision",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vehicle_year",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "vehicle_make",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "statewide_vehicle_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_vehicle_type_towing",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chp_vehicle_type_towed",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "party_race",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "parties",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "case_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "party_number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "victim_role",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_sex",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_age",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "victim_degree_of_injury",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_seating_position",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_safety_equipment_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_safety_equipment_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "victim_ejected",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "victims",
+   "primary_key": []
+  }
+ ]
+}

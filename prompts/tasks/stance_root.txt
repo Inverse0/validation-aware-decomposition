@@ -1,0 +1,1 @@
+HOW TO JUDGE THIS BLOCK. It computes the answer from input relations that are results of earlier steps of the same query, verified separately: take the facts stated about each input as given, do not require this block to redo what an input already establishes (a filter, a row limit, a grain), and judge it as you would judge a whole query against the question.

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decoval"
+version = "1.0.0"
+description = "Validation-aware decomposition of SQL queries"
+readme = "README.md"
+license-files = ["licenses/*.txt", "THIRD_PARTY_NOTICES.md"]
+requires-python = ">=3.11"
+dependencies = ["sqlglot==30.18.0", "egglog==13.2.0", "numpy==2.4.6"]
+
+[project.optional-dependencies]
+baselines = [
+  "duckdb==1.5.6", "pandas==2.3.3", "pandasql==0.7.3",
+  "google-genai==1.75.0", "Jinja2==3.1.6", "pydantic==2.14.1",
+  "pydantic-settings==2.16.0", "tenacity==8.5.0", "loguru==0.7.3",
+  "tqdm==4.70.1", "smart_open==7.7.1", "cloudpathlib==0.21.1",
+  "SQLAlchemy==2.1.5",
+]
+
+[project.scripts]
+decoval = "reproduction.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sqldecomp*", "reproduction*", "prompts*", "nl2sql_verification*", "benchmarks*"]
+
+[tool.setuptools.package-data]
+prompts = ["**/*.txt", "README.md"]
+benchmarks = ["**/*.json", "**/*.jsonl", "**/*.sql", "**/*.md"]

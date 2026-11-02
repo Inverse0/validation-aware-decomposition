@@ -1,0 +1,5 @@
+"""The paper uses zero-shot prompts; example registries are intentionally empty."""
+DATA_TO_ANSWER_EXAMPLES = {}
+ANSWER_TO_DATA_EXAMPLES = {}
+DATA_TO_ANSWER_EXAMPLES_WITH_ADDITIONAL_INFORMATION = {}
+ANSWER_TO_DATA_EXAMPLES_WITH_ADDITIONAL_INFORMATION = {}

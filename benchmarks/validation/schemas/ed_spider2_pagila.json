@@ -1,0 +1,1001 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "actor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "first_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "actor",
+   "primary_key": [
+    "actor_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "address_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "address2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "district",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "city_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "postal_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "phone",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "city_id"
+     ],
+     "ref_columns": [
+      "city_id"
+     ],
+     "ref_table": "city"
+    }
+   ],
+   "name": "address",
+   "primary_key": [
+    "address_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "category_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "category",
+   "primary_key": [
+    "category_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "city_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "city",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "country_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "country_id"
+     ],
+     "ref_columns": [
+      "country_id"
+     ],
+     "ref_table": "country"
+    }
+   ],
+   "name": "city",
+   "primary_key": [
+    "city_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "country_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "country",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "country",
+   "primary_key": [
+    "country_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "customer_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "store_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "first_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "email",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "active",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "create_date",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "address_id"
+     ],
+     "ref_columns": [
+      "address_id"
+     ],
+     "ref_table": "address"
+    },
+    {
+     "columns": [
+      "store_id"
+     ],
+     "ref_columns": [
+      "store_id"
+     ],
+     "ref_table": "store"
+    }
+   ],
+   "name": "customer",
+   "primary_key": [
+    "customer_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "zip_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "phone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "notes",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customer_list",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "film_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "title",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "release_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "language_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "original_language_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rental_duration",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rental_rate",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "length",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "replacement_cost",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "rating",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "special_features",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "language_id"
+     ],
+     "ref_columns": [
+      "language_id"
+     ],
+     "ref_table": "language"
+    },
+    {
+     "columns": [
+      "original_language_id"
+     ],
+     "ref_columns": [
+      "language_id"
+     ],
+     "ref_table": "language"
+    }
+   ],
+   "name": "film",
+   "primary_key": [
+    "film_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "actor_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "film_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "actor_id"
+     ],
+     "ref_columns": [
+      "actor_id"
+     ],
+     "ref_table": "actor"
+    },
+    {
+     "columns": [
+      "film_id"
+     ],
+     "ref_columns": [
+      "film_id"
+     ],
+     "ref_table": "film"
+    }
+   ],
+   "name": "film_actor",
+   "primary_key": [
+    "actor_id",
+    "film_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "film_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "category_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "category_id"
+     ],
+     "ref_columns": [
+      "category_id"
+     ],
+     "ref_table": "category"
+    },
+    {
+     "columns": [
+      "film_id"
+     ],
+     "ref_columns": [
+      "film_id"
+     ],
+     "ref_table": "film"
+    }
+   ],
+   "name": "film_category",
+   "primary_key": [
+    "film_id",
+    "category_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "fid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "title",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "price",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "length",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rating",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "actors",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "film_list",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "film_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "title",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "film_text",
+   "primary_key": [
+    "film_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "inventory_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "film_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "store_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "film_id"
+     ],
+     "ref_columns": [
+      "film_id"
+     ],
+     "ref_table": "film"
+    },
+    {
+     "columns": [
+      "store_id"
+     ],
+     "ref_columns": [
+      "store_id"
+     ],
+     "ref_table": "store"
+    }
+   ],
+   "name": "inventory",
+   "primary_key": [
+    "inventory_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "language_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "language",
+   "primary_key": [
+    "language_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "payment_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customer_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "staff_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rental_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "amount",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "payment_date",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "customer_id"
+     ],
+     "ref_columns": [
+      "customer_id"
+     ],
+     "ref_table": "customer"
+    },
+    {
+     "columns": [
+      "rental_id"
+     ],
+     "ref_columns": [
+      "rental_id"
+     ],
+     "ref_table": "rental"
+    },
+    {
+     "columns": [
+      "staff_id"
+     ],
+     "ref_columns": [
+      "staff_id"
+     ],
+     "ref_table": "staff"
+    }
+   ],
+   "name": "payment",
+   "primary_key": [
+    "payment_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "rental_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "rental_date",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "inventory_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customer_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "return_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "staff_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "customer_id"
+     ],
+     "ref_columns": [
+      "customer_id"
+     ],
+     "ref_table": "customer"
+    },
+    {
+     "columns": [
+      "inventory_id"
+     ],
+     "ref_columns": [
+      "inventory_id"
+     ],
+     "ref_table": "inventory"
+    },
+    {
+     "columns": [
+      "staff_id"
+     ],
+     "ref_columns": [
+      "staff_id"
+     ],
+     "ref_table": "staff"
+    }
+   ],
+   "name": "rental",
+   "primary_key": [
+    "rental_id"
+   ],
+   "unique_keys": [
+    [
+     "rental_date",
+     "inventory_id",
+     "customer_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "total_sales",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "sales_by_film_category",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "store_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "store",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "manager",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "total_sales",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "sales_by_store",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "staff_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "first_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "address_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "picture",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "email",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "store_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "active",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "username",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "password",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "address_id"
+     ],
+     "ref_columns": [
+      "address_id"
+     ],
+     "ref_table": "address"
+    },
+    {
+     "columns": [
+      "store_id"
+     ],
+     "ref_columns": [
+      "store_id"
+     ],
+     "ref_table": "store"
+    }
+   ],
+   "name": "staff",
+   "primary_key": [
+    "staff_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "zip_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "phone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "staff_list",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "store_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "manager_staff_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "address_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "last_update",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "address_id"
+     ],
+     "ref_columns": [
+      "address_id"
+     ],
+     "ref_table": "address"
+    },
+    {
+     "columns": [
+      "manager_staff_id"
+     ],
+     "ref_columns": [
+      "staff_id"
+     ],
+     "ref_table": "staff"
+    }
+   ],
+   "name": "store",
+   "primary_key": [
+    "store_id"
+   ]
+  }
+ ]
+}

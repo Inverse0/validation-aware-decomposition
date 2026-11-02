@@ -1,0 +1,667 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "member_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "region",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bitcoin_members",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "ticker",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "market_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "price",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "open",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "high",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "low",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "volume",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "change",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bitcoin_prices",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "txn_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "member_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ticker",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "txn_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "txn_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "quantity",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "percentage_fee",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "txn_time",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bitcoin_transactions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "week_date_formatted",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "week_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "region",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "platform",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "transactions",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sales",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "week_number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "month_number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "calendar_year",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "age_band",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "demographic",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "avg_transaction",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cleaned_weekly_sales",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "customer_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "region_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "node_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "start_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "end_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customer_nodes",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "region_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "region_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customer_regions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "customer_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "txn_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "txn_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "txn_amount",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customer_transactions",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "interest_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "interest_summary",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_modified",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "interest_map",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "_month",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "_year",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "month_year",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "interest_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "composition",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "index_value",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "ranking",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "percentile_ranking",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "interest_metrics",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "campaign_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "products",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "campaign_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "start_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "end_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "shopping_cart_campaign_identifier",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "event_type",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "event_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "shopping_cart_event_identifier",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "visit_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "cookie_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "page_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "event_type",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sequence_number",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "event_time",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "shopping_cart_events",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "page_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "page_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_category",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "product_id",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "shopping_cart_page_hierarchy",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "user_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "cookie_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "start_date",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "shopping_cart_users",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "item_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "item_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "category_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "category_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "veg_cat",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "item_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "item_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "loss_rate_%",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "veg_loss_rate_df",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "txn_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "txn_time",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "item_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "qty_sold(kg)",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "unit_selling_px_rmb/kg",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "sale/return",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "discount(%)",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "day_of_week",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "veg_txn_df",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "whsle_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "item_code",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "whsle_px_rmb-kg",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "veg_whsle_df",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "week_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "region",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "platform",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "customer_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "transactions",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sales",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "weekly_sales",
+   "primary_key": []
+  }
+ ]
+}

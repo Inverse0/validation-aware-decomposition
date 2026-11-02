@@ -1,0 +1,345 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "cid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "country",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "gid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "genre",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "laid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "language",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "location",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_cast",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "cid",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_country",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_director",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "gid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_genre",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "laid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_language",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lid",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_location",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "pid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "m_producer",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "title",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "year",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "rating",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "num_votes",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "movie",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "pid",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "gender",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "person",
+   "primary_key": []
+  }
+ ]
+}

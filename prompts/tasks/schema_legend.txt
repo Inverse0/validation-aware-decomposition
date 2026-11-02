@@ -1,0 +1,1 @@
+SCHEMA (PostgreSQL; a table per line as table(column type, ...); PK = primary key, FK = foreign key)

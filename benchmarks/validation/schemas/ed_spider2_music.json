@@ -1,0 +1,530 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "albumid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "title",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "artistid",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "artistid"
+     ],
+     "ref_columns": [
+      "artistid"
+     ],
+     "ref_table": "artist"
+    }
+   ],
+   "name": "album",
+   "primary_key": [
+    "albumid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "artistid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "artist",
+   "primary_key": [
+    "artistid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "customerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "firstname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lastname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "company",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "state",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "postalcode",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "phone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fax",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "email",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "supportrepid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "supportrepid"
+     ],
+     "ref_columns": [
+      "employeeid"
+     ],
+     "ref_table": "employee"
+    }
+   ],
+   "name": "customer",
+   "primary_key": [
+    "customerid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "employeeid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "lastname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "firstname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "title",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "reportsto",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "birthdate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hiredate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "city",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "state",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "country",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "postalcode",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "phone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fax",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "email",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "reportsto"
+     ],
+     "ref_columns": [
+      "employeeid"
+     ],
+     "ref_table": "employee"
+    }
+   ],
+   "name": "employee",
+   "primary_key": [
+    "employeeid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "genreid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "genre",
+   "primary_key": [
+    "genreid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "invoiceid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "invoicedate",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "billingaddress",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "billingcity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "billingstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "billingcountry",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "billingpostalcode",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "total",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "customerid"
+     ],
+     "ref_columns": [
+      "customerid"
+     ],
+     "ref_table": "customer"
+    }
+   ],
+   "name": "invoice",
+   "primary_key": [
+    "invoiceid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "invoicelineid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "invoiceid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "trackid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "unitprice",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "quantity",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "invoiceid"
+     ],
+     "ref_columns": [
+      "invoiceid"
+     ],
+     "ref_table": "invoice"
+    },
+    {
+     "columns": [
+      "trackid"
+     ],
+     "ref_columns": [
+      "trackid"
+     ],
+     "ref_table": "track"
+    }
+   ],
+   "name": "invoiceline",
+   "primary_key": [
+    "invoicelineid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "mediatypeid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "mediatype",
+   "primary_key": [
+    "mediatypeid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "playlistid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "playlist",
+   "primary_key": [
+    "playlistid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "playlistid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "trackid",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "playlistid"
+     ],
+     "ref_columns": [
+      "playlistid"
+     ],
+     "ref_table": "playlist"
+    },
+    {
+     "columns": [
+      "trackid"
+     ],
+     "ref_columns": [
+      "trackid"
+     ],
+     "ref_table": "track"
+    }
+   ],
+   "name": "playlisttrack",
+   "primary_key": [
+    "playlistid",
+    "trackid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "trackid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "albumid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mediatypeid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "genreid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "composer",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "milliseconds",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bytes",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "unitprice",
+     "nullable": false,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "albumid"
+     ],
+     "ref_columns": [
+      "albumid"
+     ],
+     "ref_table": "album"
+    },
+    {
+     "columns": [
+      "genreid"
+     ],
+     "ref_columns": [
+      "genreid"
+     ],
+     "ref_table": "genre"
+    },
+    {
+     "columns": [
+      "mediatypeid"
+     ],
+     "ref_columns": [
+      "mediatypeid"
+     ],
+     "ref_table": "mediatype"
+    }
+   ],
+   "name": "track",
+   "primary_key": [
+    "trackid"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,1522 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "country",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "country_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "country_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "country"
+    }
+   ],
+   "name": "league",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "country_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "league_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "season",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stage",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "match_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_team_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_team_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_team_goal",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_team_goal",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_x11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_x11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_y11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_y11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_player_11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_1",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_2",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_3",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_4",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_5",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_6",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_7",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_8",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_9",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_10",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_player_11",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "goal",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shoton",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shotoff",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "foulcommit",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "card",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "cross",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "corner",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "possession",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "b365h",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "b365d",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "b365a",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bwh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bwd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bwa",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "iwh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "iwd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "iwa",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "lbh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "lbd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "lba",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "psh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "psd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "psa",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "whh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "whd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "wha",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "sjh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "sjd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "sja",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "vch",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "vcd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "vca",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "gbh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "gbd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "gba",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bsh",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bsd",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "bsa",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "away_player_10"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_11"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_1"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_2"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_3"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_4"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_5"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_6"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_7"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_8"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_player_9"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "away_team_api_id"
+     ],
+     "ref_columns": [
+      "team_api_id"
+     ],
+     "ref_table": "team"
+    },
+    {
+     "columns": [
+      "country_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "country"
+    },
+    {
+     "columns": [
+      "home_player_10"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_11"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_1"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_2"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_3"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_4"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_5"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_6"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_7"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_8"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_player_9"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    },
+    {
+     "columns": [
+      "home_team_api_id"
+     ],
+     "ref_columns": [
+      "team_api_id"
+     ],
+     "ref_table": "team"
+    },
+    {
+     "columns": [
+      "league_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "league"
+    }
+   ],
+   "name": "match",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "match_api_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "league",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "season",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "match_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_team",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_team",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_team_goal",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "away_team_goal",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "home_gk",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_center_back_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_center_back_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_right_back",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_left_back",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_midfield_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_midfield_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_midfield_3",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_midfield_4",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_second_forward",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "home_center_forward",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_gk",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_center_back_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_center_back_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_right_back",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_left_back",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_midfield_1",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_midfield_2",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_midfield_3",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_midfield_4",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_second_forward",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "away_center_forward",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "goal",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "card",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "match_view",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "player_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "player_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "player_fifa_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "birthday",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "height",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "weight",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "player",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "player_api_id"
+    ],
+    [
+     "player_fifa_api_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "player_fifa_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "player_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "overall_rating",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "potential",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "preferred_foot",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "attacking_work_rate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "defensive_work_rate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "crossing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "finishing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "heading_accuracy",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "short_passing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "volleys",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "dribbling",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "curve",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "free_kick_accuracy",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "long_passing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ball_control",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "acceleration",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sprint_speed",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "agility",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "reactions",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "balance",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "shot_power",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "jumping",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stamina",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "strength",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "long_shots",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "aggression",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "interceptions",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "positioning",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "vision",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "penalties",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "marking",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "standing_tackle",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "sliding_tackle",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gk_diving",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gk_handling",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gk_kicking",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gk_positioning",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gk_reflexes",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "player_api_id"
+     ],
+     "ref_columns": [
+      "player_api_id"
+     ],
+     "ref_table": "player"
+    }
+   ],
+   "name": "player_attributes",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "team_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "team_fifa_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "team_long_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "team_short_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "team",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "team_api_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "team_fifa_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "team_api_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "buildupplayspeed",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "buildupplayspeedclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "buildupplaydribbling",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "buildupplaydribblingclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "buildupplaypassing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "buildupplaypassingclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "buildupplaypositioningclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chancecreationpassing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "chancecreationpassingclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chancecreationcrossing",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "chancecreationcrossingclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chancecreationshooting",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "chancecreationshootingclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "chancecreationpositioningclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "defencepressure",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "defencepressureclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "defenceaggression",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "defenceaggressionclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "defenceteamwidth",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "defenceteamwidthclass",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "defencedefenderlineclass",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "team_api_id"
+     ],
+     "ref_columns": [
+      "team_api_id"
+     ],
+     "ref_table": "team"
+    }
+   ],
+   "name": "team_attributes",
+   "primary_key": [
+    "id"
+   ]
+  }
+ ]
+}

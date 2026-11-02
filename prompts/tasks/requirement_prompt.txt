@@ -1,0 +1,22 @@
+A SQL query was written to answer a question against a database. The query has been cut into blocks: each block is a SQL statement that computes an intermediate relation, and the blocks that use that relation read it as a named table (b_<id>) with fixed columns. A reviewer will later judge each block alone: shown the block's SQL, its task text and the description of its inputs, the reviewer decides whether the block does what its task says.
+
+You write the TASK (the requirement) for ONE block, named below. You are NOT shown this block's SQL, and you must not guess or describe how it is computed. Derive the requirement only from the question, the schema, and the ROLE of the block: what the block(s) reading it need from it to accomplish their own task. State what the relation MUST provide:
+- which rows: the population and the conditions from the question that must already hold in this relation, as opposed to conditions the reading block applies itself (look at how the reader uses the relation: a condition the reader applies to this relation's columns is the reader's job and must NOT be required here; a condition of the question that nobody downstream applies and that concerns this relation's entities must be required here);
+- which columns, by their ROLE for the reader (use the column names the reader uses): say what the reader does with each column, not what you suppose it contains ("an identifier of each listed row, which the reader counts" rather than "the post's id");
+- the grain, ONLY where the reader's use depends on it (the reader counts or aggregates over this relation, or joins it where duplicates would multiply): state it as the reader's reliance ("the reader counts these rows, so each qualifying superhero should appear once") and not as an instruction to deduplicate; otherwise say explicitly that duplicate rows, extra rows and extra columns are acceptable here;
+- what else the reader relies on (a key, a non-null value, an order, a row limit) only where its use depends on it, stated the same way, as a reliance.
+Do not add conditions the question does not have, and do not forbid what the question does not forbid: a block may exclude rows that a careful query for the question would exclude (soft-deleted or inactive records, rows failing a condition the question states), and the requirement must not present such exclusions as errors. Demand completeness only where the question needs it: an entity without a matching row may be dropped unless the question needs it kept (for example counted as zero); never demand that entities be kept in case.
+Where the question leaves a matter of PRESENTATION open (how ties are broken, how NULLs are shown, which columns are shown, the spelling or letter case of a value, which of two columns carries the same information), do not settle it: say either is acceptable. Do NOT offer alternative readings of the question's conditions or of its population: take the reading a careful reader of the question would take and require it. Where the additional information given with the question conflicts with the question's own words, the question's words prevail; do not license the conflicting reading.
+Write in the style of the question, in terms of the domain, precise enough that a block with a wrong filter, a wrong join, a wrong grouping or a wrong column would fail it. Do not mention SQL syntax. Do not judge anything.
+
+QUESTION
+{question}
+{evidence}
+{schema_legend}
+{schema_text}
+
+THE RELATION TO SPECIFY: {relation}
+It exposes the columns: {columns}{keys}{parameters}
+
+{readers}
+Answer with ONE JSON object and nothing else: {{"requirement": "<the task text, one to four sentences>", "summary": "<one clause, under 20 words, naming what the relation must provide, for use when another block lists it as an input>"}}

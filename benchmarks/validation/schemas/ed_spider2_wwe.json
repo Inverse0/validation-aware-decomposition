@@ -1,0 +1,293 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "belts",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "table_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "location_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "promotion_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "event_date",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "event_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "info_html",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "match_html",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cards",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "url"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "events",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "locations",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "match_types",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "card_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "winner_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "win_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "loser_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "match_type_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "duration",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "title_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "title_change",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "matches",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "promotions",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "html",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "tables",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "html"
+    ],
+    [
+     "url"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "wrestlers",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "name"
+    ]
+   ]
+  }
+ ]
+}

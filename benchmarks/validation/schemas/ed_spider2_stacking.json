@@ -1,0 +1,277 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "feature",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "range",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "drop_user",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "drop_correlation",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "target",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "eda",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "step",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "feature",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "importance",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "feature_importance",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "step",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "l1_model",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "model",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "step",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "model",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "importance",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "model_importance",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "step",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "model",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "train_score",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "test_score",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "model_score",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "path",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "target",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "problem",
+   "primary_key": [
+    "name"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "correlation",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "nb_model",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "nb_feature",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "score",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "test_size",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    },
+    {
+     "name": "resampling",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "solution",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "version",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "l1_model",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "solution_ext",
+   "primary_key": []
+  }
+ ]
+}

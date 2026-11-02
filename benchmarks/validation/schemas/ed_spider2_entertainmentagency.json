@@ -1,0 +1,601 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "agentid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "agtfirstname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "agtlastname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "agtstreetaddress",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "agtcity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "agtstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "agtzipcode",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "agtphonenumber",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "datehired",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "salary",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "commissionrate",
+     "nullable": true,
+     "type": "DOUBLE PRECISION"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "agents",
+   "primary_key": [
+    "agentid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "customerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "custfirstname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "custlastname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "custstreetaddress",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "custcity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "custstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "custzipcode",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "custphonenumber",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "customers",
+   "primary_key": [
+    "customerid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "engagementnumber",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "startdate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "enddate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "starttime",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "stoptime",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "contractprice",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "customerid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "agentid",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "entertainerid",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "agentid"
+     ],
+     "ref_columns": [
+      "agentid"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "customerid"
+     ],
+     "ref_columns": [
+      "customerid"
+     ],
+     "ref_table": "customers"
+    },
+    {
+     "columns": [
+      "entertainerid"
+     ],
+     "ref_columns": [
+      "entertainerid"
+     ],
+     "ref_table": "entertainers"
+    }
+   ],
+   "name": "engagements",
+   "primary_key": [
+    "engagementnumber"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "entertainerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "memberid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "entertainerid"
+     ],
+     "ref_columns": [
+      "entertainerid"
+     ],
+     "ref_table": "entertainers"
+    },
+    {
+     "columns": [
+      "memberid"
+     ],
+     "ref_columns": [
+      "memberid"
+     ],
+     "ref_table": "members"
+    }
+   ],
+   "name": "entertainer_members",
+   "primary_key": [
+    "entertainerid",
+    "memberid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "entertainerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "styleid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stylestrength",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "entertainerid"
+     ],
+     "ref_columns": [
+      "entertainerid"
+     ],
+     "ref_table": "entertainers"
+    },
+    {
+     "columns": [
+      "styleid"
+     ],
+     "ref_columns": [
+      "styleid"
+     ],
+     "ref_table": "musical_styles"
+    }
+   ],
+   "name": "entertainer_styles",
+   "primary_key": [
+    "entertainerid",
+    "styleid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "entertainerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "entstagename",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entssn",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entstreetaddress",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entcity",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entstate",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entzipcode",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "entphonenumber",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entwebpage",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "entemailaddress",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "dateentered",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "entertainers",
+   "primary_key": [
+    "entertainerid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "memberid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mbrfirstname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "mbrlastname",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "mbrphonenumber",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "gender",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "members",
+   "primary_key": [
+    "memberid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "customerid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "styleid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "preferenceseq",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "customerid"
+     ],
+     "ref_columns": [
+      "customerid"
+     ],
+     "ref_table": "customers"
+    },
+    {
+     "columns": [
+      "styleid"
+     ],
+     "ref_columns": [
+      "styleid"
+     ],
+     "ref_table": "musical_styles"
+    }
+   ],
+   "name": "musical_preferences",
+   "primary_key": [
+    "customerid",
+    "styleid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "styleid",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "stylename",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "musical_styles",
+   "primary_key": [
+    "styleid"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "datefield",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ztbldays",
+   "primary_key": [
+    "datefield"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "monthyear",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "yearnumber",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "monthnumber",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "monthstart",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "monthend",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "january",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "february",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "march",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "april",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "may",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "june",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "july",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "august",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "september",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "october",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "november",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "december",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ztblmonths",
+   "primary_key": [
+    "yearnumber",
+    "monthnumber"
+   ],
+   "unique_keys": [
+    [
+     "monthend"
+    ],
+    [
+     "monthstart"
+    ],
+    [
+     "monthyear"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "labelcount",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ztblskiplabels",
+   "primary_key": [
+    "labelcount"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "weekstart",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "weekend",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ztblweeks",
+   "primary_key": [
+    "weekstart"
+   ]
+  }
+ ]
+}

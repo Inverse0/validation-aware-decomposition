@@ -1,0 +1,22 @@
+A SQL query answers the natural-language question below. The relations below the question are computed inside that query, each written as a stand-alone SQL statement over the base tables.{closed_form}
+
+For each relation, judge whether it is a concept the question mentions. Give "match", one of:
+"complete" = it computes a concept the question names or asks for (an entity set, a quantity, the answer itself) with every condition the question attaches to that concept.
+"narrower" = it computes such a concept with some of the conditions the question attaches to it applied in full and the others still to come: a natural step toward that concept (for example, the question asks about toy orders placed in 2020 and the relation is the orders placed in 2020).
+"split" = one condition of the question is applied only in part: one end of a range the question gives, or a match between two things on only some of the attributes the question matches them on (for example, the question pairs each order with a payment by the same customer on the same day, and the relation pairs orders with payments by the same customer on any day), so that its rows only make sense once a later step applies the rest of that condition. A relation that applies some whole conditions and leaves the others to a later step is narrower, not split, also when it joins tables to apply them (for example, the question asks about customers who placed an order and wrote a review, and the relation is the customers who placed an order).
+"technical" = it matches no phrase of the question and splits none: a preparatory step (bringing tables together, a lookup).
+"unrelated" = no connection to the question.
+Also give "phrase": the words of the question that the relation matches ("" for technical or unrelated), and "missing": for narrower or split, what the question says that is not applied, or applied only in part, in the relation ("" otherwise).
+
+Only what the question says about which rows belong counts (its conditions, including a threshold or a top-k): a computation still to come that does not decide which rows belong (an aggregate over them, the columns shown, a total row) does not make a relation narrower. A small relation that matches one phrase of the question is "complete", exactly like the full answer: being closer to the full answer earns nothing. Do not judge whether the SQL is correct.
+
+QUESTION
+{question}
+{evidence}
+SCHEMA
+{schema_text}
+
+RELATIONS
+{relations}
+
+Answer with ONE JSON object and nothing else: {{"C1": {{"match": "...", "phrase": "...", "missing": "..."}}, "C2": {{...}}, ...}} with exactly the labels of the relations above as keys, every one of them.

@@ -1,0 +1,11 @@
+A SQL query was written against a database and cut into steps: each step computes an intermediate relation, and later steps read it as a named table. Below is ONE step, written as one SQL statement that computes its relation from the database's tables, with every step it depends on included in it.
+
+Describe what this relation contains, for a reader who will use it as a table without seeing the SQL: which rows it holds (the population, and every condition that restricts it, including the conditions applied in the included steps), what each column holds (name the columns as the relation exposes them), and what one row stands for (whether rows can repeat). Describe what the SQL computes exactly as written: do not guess what it was meant to compute, do not correct it, and do not judge it. Write in terms of the domain; do not mention SQL syntax. One to three sentences.
+
+{schema_legend}
+{schema_text}
+
+THE STEP (its relation exposes the columns: {columns}{parameters})
+{sql}
+
+Answer with ONE JSON object and nothing else: {{"description": "<one to three sentences>"}}

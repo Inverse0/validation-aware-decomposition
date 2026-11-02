@@ -1,0 +1,7514 @@
+{
+ "tables": [
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "address_scopes",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "agent_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "binary",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "topic",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "created_at",
+     "nullable": false,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "started_at",
+     "nullable": false,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "heartbeat_timestamp",
+     "nullable": false,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "configurations",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "load",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "availability_zone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "resource_versions",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "agents",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "agent_type",
+     "host"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "version_num",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "alembic_version",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "version_num",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "alembic_version_fwaas",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "version_num",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "alembic_version_lbaas",
+   "primary_key": []
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "allowedaddresspairs",
+   "primary_key": [
+    "port_id",
+    "mac_address",
+    "ip_address"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "arista_provisioned_nets",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "arista_provisioned_tenants",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vm_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "host_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "arista_provisioned_vms",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "auto_allocated_topologies",
+   "primary_key": [
+    "tenant_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "auth_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "password",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "peer_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "remote_as",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bgp_peers",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "agent_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "bgp_speaker_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "bgp_speaker_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "bgp_speakers"
+    }
+   ],
+   "name": "bgp_speaker_dragent_bindings",
+   "primary_key": [
+    "agent_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "bgp_speaker_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "bgp_speaker_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "bgp_speakers"
+    },
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "bgp_speaker_network_bindings",
+   "primary_key": [
+    "network_id",
+    "bgp_speaker_id",
+    "ip_version"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "bgp_speaker_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "bgp_peer_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "bgp_peer_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "bgp_peers"
+    },
+    {
+     "columns": [
+      "bgp_speaker_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "bgp_speakers"
+    }
+   ],
+   "name": "bgp_speaker_peer_bindings",
+   "primary_key": [
+    "bgp_speaker_id",
+    "bgp_peer_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "local_as",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "advertise_floating_ip_host_routes",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "advertise_tenant_networks",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "bgp_speakers",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "brocadenetworks",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "physical_interface",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "brocadenetworks"
+    }
+   ],
+   "name": "brocadeports",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipsec_site_conn_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "csr_tunnel_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "csr_ike_policy_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "csr_ipsec_policy_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "ipsec_site_conn_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipsec_site_connections"
+    }
+   ],
+   "name": "cisco_csr_identifier_map",
+   "primary_key": [
+    "ipsec_site_conn_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "fw_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "direction",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "acl_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "fw_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "firewalls"
+    },
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "cisco_firewall_associations",
+   "primary_key": [
+    "fw_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "complementary_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "device_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "management_port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol_port",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "cfg_agent_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "nullable": false,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "cfg_agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "management_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "cisco_hosting_devices",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "cisco_ml2_apic_contracts",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ifname",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ifmac",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "swid",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "module",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_apic_host_links",
+   "primary_key": [
+    "host",
+    "ifname"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "neutron_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "apic_name",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_apic_names",
+   "primary_key": [
+    "neutron_id",
+    "neutron_type"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "profile_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "cisco_ml2_n1kv_network_profiles"
+    }
+   ],
+   "name": "cisco_ml2_n1kv_network_bindings",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment_range",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "multicast_ip_index",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "multicast_ip_range",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "sub_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "physical_network",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_n1kv_network_profiles",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vsm_ip",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_n1kv_policy_profiles",
+   "primary_key": [
+    "id",
+    "vsm_ip"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "cisco_ml2_n1kv_port_bindings",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "profile_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_n1kv_profile_bindings",
+   "primary_key": [
+    "tenant_id",
+    "profile_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "physical_network",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "network_profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_profile_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "cisco_ml2_n1kv_network_profiles"
+    }
+   ],
+   "name": "cisco_ml2_n1kv_vlan_allocations",
+   "primary_key": [
+    "physical_network",
+    "vlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vxlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "network_profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_profile_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "cisco_ml2_n1kv_network_profiles"
+    }
+   ],
+   "name": "cisco_ml2_n1kv_vxlan_allocations",
+   "primary_key": [
+    "vxlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vni",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "switch_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "device_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mcast_group",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_nexus_nve",
+   "primary_key": [
+    "vni",
+    "switch_ip",
+    "device_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "binding_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "switch_ip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "instance_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vni",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "is_provider_vlan",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "cisco_ml2_nexusport_bindings",
+   "primary_key": [
+    "binding_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "logical_resource_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "logical_port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "hosting_port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_id",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "hosting_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "logical_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "cisco_port_mappings",
+   "primary_key": [
+    "logical_resource_id",
+    "logical_port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "auto_schedule",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "hosting_device_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "hosting_device_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "cisco_hosting_devices"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "cisco_router_mappings",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "hash_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "hash",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "consistencyhashes",
+   "primary_key": [
+    "hash_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "security_group_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "security_group_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    }
+   ],
+   "name": "default_security_group",
+   "primary_key": [
+    "tenant_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "order",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "dnsnameservers",
+   "primary_key": [
+    "address",
+    "subnet_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_address",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "dvr_host_macs",
+   "primary_key": [
+    "host"
+   ],
+   "unique_keys": [
+    [
+     "mac_address"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "is_default",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "externalnetworks",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "opt_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "opt_value",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "extradhcpopts",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "port_id",
+     "opt_name",
+     "ip_version"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "audited",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "firewall_policies",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "fw_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "fw_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "firewalls"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "firewall_router_associations",
+   "primary_key": [
+    "fw_id",
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "firewall_policy_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "protocol",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "source_ip_address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "destination_ip_address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "source_port_range_min",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "source_port_range_max",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "destination_port_range_min",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "destination_port_range_max",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "action",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "enabled",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "firewall_policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "firewall_policies"
+    }
+   ],
+   "name": "firewall_rules",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "firewall_policy_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "firewall_policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "firewall_policies"
+    }
+   ],
+   "name": "firewalls",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "enabled",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "service_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "flavors",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "service_profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "flavor_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "flavor_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "flavors"
+    },
+    {
+     "columns": [
+      "service_profile_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "serviceprofiles"
+    }
+   ],
+   "name": "flavorserviceprofilebindings",
+   "primary_key": [
+    "service_profile_id",
+    "flavor_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "floatingip_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dns_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dns_domain",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "published_dns_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "published_dns_domain",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "floatingip_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "floatingips"
+    }
+   ],
+   "name": "floatingipdnses",
+   "primary_key": [
+    "floatingip_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "floating_ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "floating_network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "floating_port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "fixed_port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "fixed_ip_address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_known_router_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "fixed_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "floating_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    },
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "floatingips",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "l3_agent_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "state",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "l3_agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "ha_router_agent_port_bindings",
+   "primary_key": [
+    "port_id"
+   ],
+   "unique_keys": [
+    [
+     "router_id",
+     "l3_agent_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "ha_router_networks",
+   "primary_key": [
+    "tenant_id",
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "ha_router_vrid_allocations",
+   "primary_key": [
+    "network_id",
+    "vr_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "delay",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "timeout",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max_retries",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "http_method",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url_path",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "expected_codes",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "healthmonitors",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "auth_algorithm",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "encryption_algorithm",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "phase1_negotiation_mode",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lifetime_units",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lifetime_value",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ike_version",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "pfs",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ikepolicies",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_ip",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "ipallocationpools",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "ipallocations",
+   "primary_key": [
+    "ip_address",
+    "subnet_id",
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipam_subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_ip",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "ipam_subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipamsubnets"
+    }
+   ],
+   "name": "ipamallocationpools",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipam_subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "ipam_subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipamsubnets"
+    }
+   ],
+   "name": "ipamallocations",
+   "primary_key": [
+    "ip_address",
+    "ipam_subnet_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "allocation_pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_ip",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "allocation_pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipamallocationpools"
+    }
+   ],
+   "name": "ipamavailabilityranges",
+   "primary_key": [
+    "allocation_pool_id",
+    "first_ip",
+    "last_ip"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "neutron_subnet_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ipamsubnets",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "allocation_pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "first_ip",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "last_ip",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "allocation_pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipallocationpools"
+    }
+   ],
+   "name": "ipavailabilityranges",
+   "primary_key": [
+    "allocation_pool_id",
+    "first_ip",
+    "last_ip"
+   ],
+   "unique_keys": [
+    [
+     "first_ip",
+     "allocation_pool_id"
+    ],
+    [
+     "last_ip",
+     "allocation_pool_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "peer_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "peer_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "route_mode",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mtu",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "initiator",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "auth_mode",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "psk",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dpd_action",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dpd_interval",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "dpd_timeout",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "vpnservice_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipsecpolicy_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ikepolicy_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "ikepolicy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ikepolicies"
+    },
+    {
+     "columns": [
+      "ipsecpolicy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipsecpolicies"
+    },
+    {
+     "columns": [
+      "vpnservice_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "vpnservices"
+    }
+   ],
+   "name": "ipsec_site_connections",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "cidr",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipsec_site_connection_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "ipsec_site_connection_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ipsec_site_connections"
+    }
+   ],
+   "name": "ipsecpeercidrs",
+   "primary_key": [
+    "cidr",
+    "ipsec_site_connection_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "transform_protocol",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "auth_algorithm",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "encryption_algorithm",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "encapsulation_mode",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lifetime_units",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lifetime_value",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "pfs",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ipsecpolicies",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "delay",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "timeout",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max_retries",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "http_method",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "url_path",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "expected_codes",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lbaas_healthmonitors",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "listener_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "redirect_pool_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "redirect_url",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "position",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "listener_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_listeners"
+    },
+    {
+     "columns": [
+      "redirect_pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_pools"
+    }
+   ],
+   "name": "lbaas_l7policies",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "l7policy_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "compare_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "invert",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "key",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "value",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "l7policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_l7policies"
+    }
+   ],
+   "name": "lbaas_l7rules",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol_port",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "connection_limit",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "loadbalancer_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "default_pool_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "operating_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "default_tls_container_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "default_pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_pools"
+    },
+    {
+     "columns": [
+      "loadbalancer_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_loadbalancers"
+    }
+   ],
+   "name": "lbaas_listeners",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "loadbalancer_id",
+     "protocol_port"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "loadbalancer_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "bytes_in",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bytes_out",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "active_connections",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_connections",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "loadbalancer_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_loadbalancers"
+    }
+   ],
+   "name": "lbaas_loadbalancer_statistics",
+   "primary_key": [
+    "loadbalancer_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "loadbalancer_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "agent_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "loadbalancer_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_loadbalancers"
+    }
+   ],
+   "name": "lbaas_loadbalanceragentbindings",
+   "primary_key": [
+    "loadbalancer_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vip_port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vip_subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vip_address",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "operating_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "flavor_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "flavor_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "flavors"
+    },
+    {
+     "columns": [
+      "vip_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "lbaas_loadbalancers",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol_port",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "weight",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "operating_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_pools"
+    }
+   ],
+   "name": "lbaas_members",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "pool_id",
+     "address",
+     "protocol_port"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lb_algorithm",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "healthmonitor_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "provisioning_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "operating_status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "loadbalancer_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "healthmonitor_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_healthmonitors"
+    },
+    {
+     "columns": [
+      "loadbalancer_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_loadbalancers"
+    }
+   ],
+   "name": "lbaas_pools",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "healthmonitor_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "cookie_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_pools"
+    }
+   ],
+   "name": "lbaas_sessionpersistences",
+   "primary_key": [
+    "pool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "listener_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tls_container_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "position",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "listener_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "lbaas_listeners"
+    }
+   ],
+   "name": "lbaas_sni",
+   "primary_key": [
+    "listener_id",
+    "tls_container_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "lsn_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "net_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "lsn",
+   "primary_key": [
+    "lsn_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "lsn_port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lsn_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "sub_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_addr",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "lsn_id"
+     ],
+     "ref_columns": [
+      "lsn_id"
+     ],
+     "ref_table": "lsn"
+    }
+   ],
+   "name": "lsn_port",
+   "primary_key": [
+    "lsn_port_id"
+   ],
+   "unique_keys": [
+    [
+     "mac_addr"
+    ],
+    [
+     "sub_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_learning_enabled",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "maclearningstates",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol_port",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "weight",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "members",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "pool_id",
+     "address",
+     "protocol_port"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "direction",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "remote_ip_prefix",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "metering_label_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "excluded",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "metering_label_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "meteringlabels"
+    }
+   ],
+   "name": "meteringlabelrules",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "meteringlabels",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_brocadenetworks",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "physical_interface",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ml2_brocadenetworks"
+    }
+   ],
+   "name": "ml2_brocadeports",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "vif_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vif_details",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vnic_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "ml2_dvr_port_bindings",
+   "primary_key": [
+    "port_id",
+    "host"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "physical_network",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_flat_allocations",
+   "primary_key": [
+    "physical_network"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "geneve_vni",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_geneve_allocations",
+   "primary_key": [
+    "geneve_vni"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_geneve_endpoints",
+   "primary_key": [
+    "ip_address"
+   ],
+   "unique_keys": [
+    [
+     "host"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "gre_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_gre_allocations",
+   "primary_key": [
+    "gre_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_gre_endpoints",
+   "primary_key": [
+    "ip_address"
+   ],
+   "unique_keys": [
+    [
+     "host"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "physical_network",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "is_dynamic",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "segment_index",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "ml2_network_segments",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vxlan_vni",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_nexus_vxlan_allocations",
+   "primary_key": [
+    "vxlan_vni"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mcast_group",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "associated_vni",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "associated_vni"
+     ],
+     "ref_columns": [
+      "vxlan_vni"
+     ],
+     "ref_table": "ml2_nexus_vxlan_allocations"
+    }
+   ],
+   "name": "ml2_nexus_vxlan_mcast_groups",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "level",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "driver",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segment_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "segment_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ml2_network_segments"
+    }
+   ],
+   "name": "ml2_port_binding_levels",
+   "primary_key": [
+    "port_id",
+    "host",
+    "level"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vif_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vnic_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vif_details",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "profile",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "ml2_port_bindings",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_on_ucs",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_ucsm_port_profiles",
+   "primary_key": [
+    "vlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "physical_network",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_vlan_allocations",
+   "primary_key": [
+    "physical_network",
+    "vlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vxlan_vni",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "allocated",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_vxlan_allocations",
+   "primary_key": [
+    "vxlan_vni"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "udp_port",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "host",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "ml2_vxlan_endpoints",
+   "primary_key": [
+    "ip_address"
+   ],
+   "unique_keys": [
+    [
+     "host"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "multi_provider_networks",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_gateway_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "segmentation_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_gateway_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networkgateways"
+    },
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "networkconnections",
+   "primary_key": [
+    "port_id"
+   ],
+   "unique_keys": [
+    [
+     "network_gateway_id",
+     "segmentation_type",
+     "segmentation_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dhcp_agent_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "dhcp_agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "networkdhcpagentbindings",
+   "primary_key": [
+    "network_id",
+    "dhcp_agent_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dns_domain",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "networkdnsdomains",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_gateway_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "interface_name",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_gateway_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networkgateways"
+    }
+   ],
+   "name": "networkgatewaydevicereferences",
+   "primary_key": [
+    "id",
+    "network_gateway_id",
+    "interface_name"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "connector_type",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "connector_ip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "networkgatewaydevices",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "default",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "networkgateways",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "queue_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "queue_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qosqueues"
+    }
+   ],
+   "name": "networkqueuemappings",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "object_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "target_tenant",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "object_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "networkrbacs",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "action",
+     "object_id",
+     "target_tenant"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "mtu",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "vlan_transparent",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "availability_zone_hints",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "networks",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_security_enabled",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "networksecuritybindings",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "neutron_nsx_network_mappings",
+   "primary_key": [
+    "neutron_id",
+    "nsx_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_switch_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_port_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "neutron_nsx_port_mappings",
+   "primary_key": [
+    "neutron_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "neutron_nsx_router_mappings",
+   "primary_key": [
+    "neutron_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    }
+   ],
+   "name": "neutron_nsx_security_group_mappings",
+   "primary_key": [
+    "neutron_id",
+    "nsx_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "rule_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "nexthop",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "rule_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routerrules"
+    }
+   ],
+   "name": "nexthops",
+   "primary_key": [
+    "rule_id",
+    "nexthop"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "binding_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_edge_dhcp_static_bindings",
+   "primary_key": [
+    "edge_id",
+    "mac_address"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "monitor_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_monitor_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "monitor_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "healthmonitors"
+    }
+   ],
+   "name": "nsxv_edge_monitor_mappings",
+   "primary_key": [
+    "monitor_id"
+   ],
+   "unique_keys": [
+    [
+     "monitor_id",
+     "edge_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "nsxv_edge_pool_mappings",
+   "primary_key": [
+    "pool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_app_profile_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_vse_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_fw_rule_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "nsxv_edge_vip_mappings",
+   "primary_key": [
+    "pool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vnic_index",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "tunnel_index",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_edge_vnic_bindings",
+   "primary_key": [
+    "edge_id",
+    "vnic_index",
+    "tunnel_index"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "rule_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "rule_vse_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_firewall_rule_bindings",
+   "primary_key": [
+    "rule_id",
+    "edge_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "ext_ip_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "purpose",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_internal_edges",
+   "primary_key": [
+    "ext_ip_address"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_purpose",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "nsxv_internal_networks",
+   "primary_key": [
+    "network_purpose"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "device_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "index",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "nsxv_port_index_mappings",
+   "primary_key": [
+    "port_id"
+   ],
+   "unique_keys": [
+    [
+     "device_id",
+     "index"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "nsxv_port_vnic_mappings",
+   "primary_key": [
+    "neutron_id",
+    "nsx_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lswitch_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "appliance_size",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_router_bindings",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "distributed",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "router_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "service_router",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "nsxv_router_ext_attributes",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nsx_rule_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygrouprules"
+    }
+   ],
+   "name": "nsxv_rule_mappings",
+   "primary_key": [
+    "neutron_id",
+    "nsx_rule_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "neutron_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_section_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "neutron_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    }
+   ],
+   "name": "nsxv_security_group_section_mappings",
+   "primary_key": [
+    "neutron_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "policy_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "nsxv_spoofguard_policy_network_mappings",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "binding_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "phy_uuid",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "nsxv_tz_network_bindings",
+   "primary_key": [
+    "network_id",
+    "binding_type",
+    "phy_uuid",
+    "vlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vdr_router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dhcp_router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dhcp_edge_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nsxv_vdr_dhcp_bindings",
+   "primary_key": [
+    "vdr_router_id"
+   ],
+   "unique_keys": [
+    [
+     "dhcp_edge_id"
+    ],
+    [
+     "dhcp_router_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "net_partition_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_router_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_rtr_rd",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_rtr_rt",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "net_partition_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "nuage_net_partitions"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "nuage_net_partition_router_mapping",
+   "primary_key": [
+    "net_partition_id",
+    "router_id"
+   ],
+   "unique_keys": [
+    [
+     "nuage_router_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "l3dom_tmplt_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "l2dom_tmplt_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "isolated_zone",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "shared_zone",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "nuage_net_partitions",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "physical_network",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "nuage_provider_net_bindings",
+   "primary_key": [
+    "network_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "net_partition_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_subnet_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_l2dom_tmplt_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_user_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_group_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "nuage_managed_subnet",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "net_partition_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "nuage_net_partitions"
+    },
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "nuage_subnet_l2dom_mapping",
+   "primary_key": [
+    "subnet_id"
+   ],
+   "unique_keys": [
+    [
+     "nuage_subnet_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "agent_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "poolloadbalanceragentbindings",
+   "primary_key": [
+    "pool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "monitor_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "monitor_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "healthmonitors"
+    },
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "poolmonitorassociations",
+   "primary_key": [
+    "pool_id",
+    "monitor_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vip_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "lb_method",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "vip_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "vips"
+    }
+   ],
+   "name": "pools",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "bytes_in",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "bytes_out",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "active_connections",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "total_connections",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "pool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "pools"
+    }
+   ],
+   "name": "poolstatisticss",
+   "primary_key": [
+    "pool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "host",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "portbindingports",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "current_dns_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "current_dns_domain",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "previous_dns_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "previous_dns_domain",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "portdnses",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "queue_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "queue_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qosqueues"
+    }
+   ],
+   "name": "portqueuemappings",
+   "primary_key": [
+    "port_id",
+    "queue_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "mac_address",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "device_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "device_owner",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dns_name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "ports",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "network_id",
+     "mac_address"
+    ],
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_security_enabled",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "portsecuritybindings",
+   "primary_key": [
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "provider_name",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "resource_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "providerresourceassociations",
+   "primary_key": [
+    "provider_name",
+    "resource_id"
+   ],
+   "unique_keys": [
+    [
+     "resource_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "qos_policy_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "max_kbps",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max_burst_kbps",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "qos_policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qos_policies"
+    }
+   ],
+   "name": "qos_bandwidth_limit_rules",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "qos_policy_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "policy_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qos_policies"
+    }
+   ],
+   "name": "qos_network_policy_bindings",
+   "primary_key": [],
+   "unique_keys": [
+    [
+     "network_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "qos_policies",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "policy_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "policy_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qos_policies"
+    },
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "qos_port_policy_bindings",
+   "primary_key": [],
+   "unique_keys": [
+    [
+     "port_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "target_tenant",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "object_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "object_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "qos_policies"
+    }
+   ],
+   "name": "qospolicyrbacs",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "target_tenant",
+     "object_id",
+     "action"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "default",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "min",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "qos_marking",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "dscp",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "qosqueues",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "resource",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "limit",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "quotas",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "resource",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "dirty",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "in_use",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "reserved",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "quotausages",
+   "primary_key": [
+    "tenant_id",
+    "resource"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "expiration",
+     "nullable": true,
+     "type": "TIMESTAMP"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "reservations",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "resource",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "reservation_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "amount",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "reservation_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "reservations"
+    }
+   ],
+   "name": "resourcedeltas",
+   "primary_key": [
+    "resource",
+    "reservation_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "distributed",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "service_router",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ha",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ha_vr_id",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "availability_zone_hints",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "router_extra_attributes",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "l3_agent_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "l3_agent_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "agents"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "routerl3agentbindings",
+   "primary_key": [
+    "router_id",
+    "l3_agent_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_type",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "routerports",
+   "primary_key": [
+    "router_id",
+    "port_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "destination",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nexthop",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "routerroutes",
+   "primary_key": [
+    "destination",
+    "nexthop",
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "source",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "destination",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "action",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    }
+   ],
+   "name": "routerrules",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "gw_port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "enable_snat",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "gw_port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "routers",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "port_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "security_group_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    },
+    {
+     "columns": [
+      "security_group_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    }
+   ],
+   "name": "securitygroupportbindings",
+   "primary_key": [
+    "port_id",
+    "security_group_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "security_group_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "remote_group_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "direction",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ethertype",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_range_min",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "port_range_max",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "remote_ip_prefix",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "remote_group_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    },
+    {
+     "columns": [
+      "security_group_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "securitygroups"
+    },
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "securitygrouprules",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "securitygroups",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "driver",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "enabled",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "metainfo",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "serviceprofiles",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "vip_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "cookie_name",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "vip_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "vips"
+    }
+   ],
+   "name": "sessionpersistences",
+   "primary_key": [
+    "vip_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "resource_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "created_at",
+     "nullable": true,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "updated_at",
+     "nullable": true,
+     "type": "TIMESTAMP"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "standardattributes",
+   "primary_key": [
+    "id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "cidr",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnetpool_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "subnetpool_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnetpools"
+    }
+   ],
+   "name": "subnetpoolprefixes",
+   "primary_key": [
+    "cidr",
+    "subnetpool_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "default_prefixlen",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "min_prefixlen",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "max_prefixlen",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "shared",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "default_quota",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "hash",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "address_scope_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "is_default",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "subnetpools",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "destination",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "nexthop",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "subnetroutes",
+   "primary_key": [
+    "destination",
+    "nexthop",
+    "subnet_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "network_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ip_version",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "cidr",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "gateway_ip",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "enable_dhcp",
+     "nullable": true,
+     "type": "BIGINT"
+    },
+    {
+     "name": "ipv6_ra_mode",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "ipv6_address_mode",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "subnetpool_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    },
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "subnets",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "standard_attr_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "standard_attr_id",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "tag",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "standard_attr_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "standardattributes"
+    }
+   ],
+   "name": "tags",
+   "primary_key": [
+    "standard_attr_id",
+    "tag"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "network_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "binding_type",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "phy_uuid",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "vlan_id",
+     "nullable": false,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "network_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "networks"
+    }
+   ],
+   "name": "tz_network_bindings",
+   "primary_key": [
+    "network_id",
+    "binding_type",
+    "phy_uuid",
+    "vlan_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "edge_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "lswitch_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [],
+   "name": "vcns_router_bindings",
+   "primary_key": [
+    "router_id"
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "port_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "protocol_port",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "protocol",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "pool_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "status_description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "connection_limit",
+     "nullable": true,
+     "type": "BIGINT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "port_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "ports"
+    }
+   ],
+   "name": "vips",
+   "primary_key": [
+    "id"
+   ],
+   "unique_keys": [
+    [
+     "pool_id"
+    ]
+   ]
+  },
+  {
+   "columns": [
+    {
+     "name": "tenant_id",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "name",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "description",
+     "nullable": true,
+     "type": "TEXT"
+    },
+    {
+     "name": "status",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "admin_state_up",
+     "nullable": false,
+     "type": "BIGINT"
+    },
+    {
+     "name": "subnet_id",
+     "nullable": false,
+     "type": "TEXT"
+    },
+    {
+     "name": "router_id",
+     "nullable": false,
+     "type": "TEXT"
+    }
+   ],
+   "foreign_keys": [
+    {
+     "columns": [
+      "router_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "routers"
+    },
+    {
+     "columns": [
+      "subnet_id"
+     ],
+     "ref_columns": [
+      "id"
+     ],
+     "ref_table": "subnets"
+    }
+   ],
+   "name": "vpnservices",
+   "primary_key": [
+    "id"
+   ]
+  }
+ ]
+}

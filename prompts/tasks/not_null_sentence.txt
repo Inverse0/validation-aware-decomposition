@@ -1,0 +1,1 @@
+NOT NULL after a column's type = the column never holds NULL (a PK column never does either)
